@@ -15,6 +15,9 @@ class App extends React.Component {
         <button type="button" className="btn btn-primary" onClick={signInWithGoogle}>
           This is a bootstrap button
         </button>
+        <h2>{localStorage.getItem("name")}</h2>
+        <h3>{localStorage.getItem("email")}</h3>
+        <h3>{localStorage.getItem("photoURL")}</h3>
       </>
     );
   }
