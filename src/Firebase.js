@@ -25,6 +25,10 @@ export const signInWithGoogle = () => {
   .then(result => {
     const {displayName, email, photoURL} = result.user
     console.log("can you rad me", displayName, email, photoURL)
+    console.log(result)
+    localStorage.setItem('name', displayName)
+    localStorage.setItem('email', email)
+    localStorage.setItem('photoURL', photoURL)
   })
   .catch(err => console.log('signInWithGoogle err: ', err))
 }
