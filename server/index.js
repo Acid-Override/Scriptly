@@ -1,7 +1,10 @@
+const router = require('./routes.js');
 const express = require('express')
 require('dotenv').config()
 const path = require('path')
 const morgan = require("morgan")
+const db = require('../database').connection
+
 
 const app=express();
 
@@ -11,7 +14,7 @@ app.use(express.static('dist'));
 app.use(express.json());
 app.use(morgan('dev'));
 
-
+app.use('/', router);
 
 app.get('/test', (req, res)=> {
   res.send("<h1>Hello World</h1>")
